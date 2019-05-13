@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `firebase deploy`
+
+Tällä hoituu deploy firebaseen osoitteeseen [https://chat-pop.web.app/](https://chat-pop.web.app/). Ensin pitää asentaa npm. Sitten `npm install -g firebase-tools`, `firebase login`, `firebase deploy`. Install ja login joutuu tehdä vain ensimäisellä kerralla.
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
