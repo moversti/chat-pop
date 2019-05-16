@@ -8,9 +8,9 @@ import './Chat.css'
 
 export default function Chat({ click }) {
   return (
-    <Draggable>
+    <Draggable handle='#handle'>
       <div className="window">
-        <div className="bar">
+        <div className="bar" id='handle'>
           <div onClick={click} className="minimize">
             <FontAwesomeIcon icon={faWindowMinimize} />
           </div>
