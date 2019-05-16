@@ -5,7 +5,9 @@ import Chat from './components/Chat'
 function App() {
   return (
     <div>
-      <Chat />
+      <Chat click={()=>{
+        console.log('Minimize button clicked')
+      }} />
     </div>
   );
 }
