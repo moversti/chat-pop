@@ -1,37 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import Draggable from "react-draggable";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
-import { faGrinBeam } from '@fortawesome/free-regular-svg-icons'
-import './Chat.css'
-import { declareVariable } from "@babel/types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
+import { faGrinBeam, faUser } from "@fortawesome/free-regular-svg-icons";
+import "./Chat.css";
+import Message from "./Message";
 
+export default function Chat({ click, bot }) {
+  const [messages, setMessages] = useState([]);
+  const [current, setCurrent] = useState("");
 
-export default function Chat({ click }) {
   return (
-    <Draggable handle='#handle'>
+    <Draggable handle="#handle" bounds="body">
       <div className="window">
-        <div className="bar" id='handle'>
+        <div className="bar" id="handle">
           <div onClick={click} className="minimize">
             <FontAwesomeIcon icon={faWindowMinimize} />
           </div>
         </div>
-        <div className="chat-box">
-          <div className="chat-bubble">
-            <div className="grin">
-              <FontAwesomeIcon icon={faGrinBeam} size="2x" />
-            </div>
-            <div className="content">
-              Bot: Lorem ipsum <br />
-            </div>
-            <div className="time-name">
-              13:00 Chat-Pop Bot
-        </div>
-          </div>
-        </div>
+
+        <Message icon={faGrinBeam} message="Miten voin auttaa?" />
+        <Message icon={faUser} message="Haluan banaanin" />
+        <Message icon={faGrinBeam} message="Nam!" />
+
+        {messages}
+
         <div className="chat">
-          Kirjoita viesti tähän...
-        <div className="send"></div>
+          <input
+            placeholder="Kirjoita viesti tähän..."
+            type="text"
+            value={current}
+            onChange={e => {
+              setCurrent(e.target.value);
+            }}
+          />
+          <button
+            className="send"
+            onClick={() => {
+              setMessages([
+                ...messages,
+                <Message
+                  icon={faUser}
+                  message={current}
+                  key={new Date().toISOString()}
+                />
+              ]);
+              setCurrent("");
+            }}
+          >
+            Lähetä
+          </button>
         </div>
       </div>
     </Draggable>
