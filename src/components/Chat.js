@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
 import { faGrinBeam } from '@fortawesome/free-regular-svg-icons'
 import './Chat.css'
+import { declareVariable } from "@babel/types";
 
 
 export default function Chat({ click }) {
@@ -15,15 +16,21 @@ export default function Chat({ click }) {
             <FontAwesomeIcon icon={faWindowMinimize} />
           </div>
         </div>
-        <div className="chat-bubble">
-        
-        <FontAwesomeIcon icon={faGrinBeam} size="2x" />
-
-        Bot: Lorem ipsum <br />
+        <div className="chat-box">
+          <div className="chat-bubble">
+            <div className="grin">
+              <FontAwesomeIcon icon={faGrinBeam} size="2x" />
+            </div>
+            <div className="content">
+              Bot: Lorem ipsum <br />
+            </div>
+            <div className="time-name">
+              13:00 Chat-Pop Bot
         </div>
-        You: Lorem ipsum <br /> Bot: Lorem ipsum <br /> You: Lorem ipsum <br /> Bot: Lorem ipsum
+          </div>
+        </div>
         <div className="chat">
-        Kirjoita viesti tähän...
+          Kirjoita viesti tähän...
         <div className="send"></div>
         </div>
       </div>
