@@ -1,12 +1,12 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import './ChatMinimized.css'
 
 export default function ChatMinimized({click}) {
     return (
-      <div style={{position:"fixed", bottom:'0', right:'0', border:'1px solid black'}} >
-          Chat is minimized
-          <div onClick={click} style={{display:'inline'}}>
+      <div className="minimized">
+          <div onClick={click} className="arrow">
               <FontAwesomeIcon icon={faArrowUp} />
           </div>
       </div>

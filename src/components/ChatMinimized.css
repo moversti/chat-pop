@@ -1,0 +1,16 @@
+.minimized {
+    background-color: #8A6FA8;
+    color: white;
+    border: gray 1px solid;
+    width: 300px;
+    height: 20px;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+}
+
+.arrow {
+    float: right;
+    padding: 0 10px;
+}

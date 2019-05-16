@@ -3,15 +3,22 @@
     height: 400px;
     background-color: #D9D9D9;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: solid 1px #707070;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
 }
 
 .bar {
     background-color: #8A6FA8;
+    height: 40px;
 }
 
 .minimize {
-    text-align: right;
     padding: 10px 15px;
+    position: absolute;
+    right: 0;
+    color: white;
 }
 
 .chat {
@@ -20,7 +27,6 @@
     padding: 15px;
     position: absolute;
     bottom: 0; right: 0; left: 0;
-    border-bottom: 1px solid black;
 }
 
 .chat-bubble {
