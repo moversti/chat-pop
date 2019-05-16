@@ -5,6 +5,7 @@ import { faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
 import { faGrinBeam, faUser } from "@fortawesome/free-regular-svg-icons";
 import "./Chat.css";
 import Message from "./Message";
+import Bot from "./Bot";
 
 export default function Chat({ click, bot }) {
   const [messages, setMessages] = useState([]);
@@ -42,6 +43,11 @@ export default function Chat({ click, bot }) {
                 <Message
                   icon={faUser}
                   message={current}
+                  key={new Date().toISOString()}
+                />,
+                <Message 
+                  icon={faGrinBeam}
+                  message={<Bot humanMessage={current}/>}
                   key={new Date().toISOString()}
                 />
               ]);
