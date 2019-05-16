@@ -24,14 +24,30 @@
 .chat {
     background-color: white;
     color: gray;
-    padding: 15px;
     position: absolute;
+    padding: 15px;
     bottom: 0; right: 0; left: 0;
 }
 
 input {
     border: none;
+    outline: none;
     font-size: 16px;
+    width: 90%;
+}
+
+.send {
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    float: right;
+    background-color: white;
+    color: #8A6FA8;
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
 }
 
 .chat-box {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Draggable from "react-draggable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
+import { faWindowMinimize, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
 import { faGrinBeam, faUser } from "@fortawesome/free-regular-svg-icons";
 import "./Chat.css";
 import Message from "./Message";
@@ -54,7 +54,7 @@ export default function Chat({ click, bot }) {
               setCurrent("");
             }}
           >
-            Lähetä
+            <FontAwesomeIcon icon={faChevronCircleRight} />
           </button>
         </div>
       </div>
