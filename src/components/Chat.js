@@ -20,7 +20,7 @@ export default function Chat({ click, bot }) {
           </div>
         </div>
 
-        <Message icon={faGrinBeam} message="Miten voin auttaa?" />
+        <Message icon={faGrinBeam} message="Miten voin auttaa?" time='bot 16.5' />
         <Message icon={faUser} message="Haluan banaanin" />
         <Message icon={faGrinBeam} message="Nam!" />
 

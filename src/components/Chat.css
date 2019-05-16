@@ -29,6 +29,11 @@
     bottom: 0; right: 0; left: 0;
 }
 
+input {
+    border: none;
+    font-size: 16px;
+}
+
 .chat-box {
     padding: 30px 20px;
 }
@@ -42,22 +47,8 @@
 
     width: 200px;
     height: auto;
-    grid-column-gap: 25px;
+    grid-column-gap: 10px;
     overflow: auto;
-}
-
-.chat-bubble::after {
-	content: ' ';
-    position: absolute;
-    top: 80px;
-    left: 60px;
-	border: 20px solid;
-    border-color: white transparent transparent transparent;
-    z-index: 900;
-}
-
-.grin {
-    grid-area: grin;
 }
 
 .content {
