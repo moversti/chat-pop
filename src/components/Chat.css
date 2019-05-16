@@ -60,10 +60,10 @@ input {
     ". content"
     ". time-name";
 
-    width: 200px;
+    width: 300px;
     height: auto;
     grid-column-gap: 10px;
-    overflow: auto;
+    overflow: visible;
 }
 
 .content {
