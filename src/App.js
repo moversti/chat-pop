@@ -12,7 +12,7 @@ function App() {
 
 
   return (
-    <div>
+    <React.Fragment>
       {
         minimized ?
         <ChatMinimized click={()=>{
@@ -22,7 +22,7 @@ function App() {
           setMinimized(true)
         }} />
       }
-    </div>
+    </React.Fragment>
   );
 }
 
