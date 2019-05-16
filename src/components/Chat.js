@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Draggable from "react-draggable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,9 +9,15 @@ import { faGrinBeam, faUser } from "@fortawesome/free-regular-svg-icons";
 import "./Chat.css";
 import Message from "./Message";
 
+function scrollToBottom() {
+  let element = document.querySelector(".scrollable-messages");
+  element.scrollTop = element.scrollHeight;
+}
+
 export default function Chat({ click, bot }) {
   const [messages, setMessages] = useState([]);
   const [current, setCurrent] = useState("");
+  useEffect(scrollToBottom);
 
   return (
     <Draggable handle="#handle" bounds="body">
@@ -30,38 +36,42 @@ export default function Chat({ click, bot }) {
         </div>
 
         <div className="chat">
-          <input
-            placeholder="Kirjoita viesti tähän..."
-            type="text"
-            value={current}
-            onChange={e => {
-              setCurrent(e.target.value);
-            }}
-          />
-          <button
-            className="send"
-            onClick={() => {
-              let d = new Date();
-              setMessages([
-                ...messages,
-                <Message
-                  icon={faUser}
-                  message={current}
-                  timeName={"bot " + d.toLocaleTimeString()}
-                  key={d.toISOString()}
-                />,
-                <Message
-                  icon={faGrinBeam}
-                  message={bot(current)}
-                  timeName={"sinä " + d.toLocaleTimeString()}
-                  key={d.toISOString() + "bot"}
-                />
-              ]);
-              setCurrent("");
-            }}
-          >
-            <FontAwesomeIcon icon={faChevronCircleRight} />
-          </button>
+          <form>
+            <input
+              placeholder="Kirjoita viesti tähän..."
+              type="text"
+              value={current}
+              onChange={e => {
+                setCurrent(e.target.value);
+              }}
+            />
+            <button
+              type="submit"
+              className="send"
+              onClick={(e) => {
+                e.preventDefault()
+                let d = new Date();
+                setMessages([
+                  ...messages,
+                  <Message
+                    icon={faUser}
+                    message={current}
+                    timeName={"bot " + d.toLocaleTimeString()}
+                    key={d.toISOString()}
+                  />,
+                  <Message
+                    icon={faGrinBeam}
+                    message={bot(current)}
+                    timeName={"sinä " + d.toLocaleTimeString()}
+                    key={d.toISOString() + "bot"}
+                  />
+                ]);
+                setCurrent("");
+              }}
+            >
+              <FontAwesomeIcon icon={faChevronCircleRight} />
+            </button>
+          </form>
         </div>
       </div>
     </Draggable>
