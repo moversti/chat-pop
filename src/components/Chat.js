@@ -2,6 +2,7 @@ import React from "react";
 import Draggable from "react-draggable";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
+import './Chat.css'
 
 
 export default function Chat({ click }) {
