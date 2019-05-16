@@ -1,0 +1,28 @@
+.chat-bubble {
+  display: grid;
+  grid-template-areas:
+    "grin content"
+    ". content"
+    ". time-name";
+
+  width: 300px;
+  height: auto;
+  grid-column-gap: 10px;
+  overflow: visible;
+}
+
+.content {
+  grid-area: content;
+  text-align: left;
+  padding: 10px;
+  margin: 10px 0 5px 0;
+  background-color: white;
+  border-radius: 10%/20%;
+  z-index: 950;
+}
+
+.time-name {
+  grid-area: time-name;
+  font-size: 10px;
+  margin: 0 10px;
+}
