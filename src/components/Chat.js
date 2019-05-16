@@ -8,7 +8,7 @@ import './Chat.css'
 
 export default function Chat({ click }) {
   return (
-    <Draggable handle='#handle'>
+    <Draggable handle='#handle' bounds='body'>
       <div className="window">
         <div className="bar" id='handle'>
           <div onClick={click} className="minimize">
