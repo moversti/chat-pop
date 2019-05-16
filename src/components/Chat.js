@@ -2,19 +2,30 @@ import React from "react";
 import Draggable from "react-draggable";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
+import { faGrinBeam } from '@fortawesome/free-regular-svg-icons'
 import './Chat.css'
 
 
 export default function Chat({ click }) {
   return (
     <Draggable>
-      <div style={{border: '2px solid black', width:'150px', backgroundColor:'lightgrey', height:'350px'}}>
-        <div style={{border: '1px solid black', width:'148px', backgroundColor:'purple', height:'30px', left:'1px'}}>
-          <div onClick={click} style={{float:'right', marginRight:'4px', height:'100%'}}>
+      <div className="window">
+        <div className="bar">
+          <div onClick={click} className="minimize">
             <FontAwesomeIcon icon={faWindowMinimize} />
           </div>
         </div>
-        Bot: Lorem ipsum <br /> You: Lorem ipsum <br /> Bot: Lorem ipsum <br /> You: Lorem ipsum <br /> Bot: Lorem ipsum
+        <div className="chat-bubble">
+        
+        <FontAwesomeIcon icon={faGrinBeam} size="2x" />
+
+        Bot: Lorem ipsum <br />
+        </div>
+        You: Lorem ipsum <br /> Bot: Lorem ipsum <br /> You: Lorem ipsum <br /> Bot: Lorem ipsum
+        <div className="chat">
+        Kirjoita viesti tähän...
+        <div className="send"></div>
+        </div>
       </div>
     </Draggable>
   );
