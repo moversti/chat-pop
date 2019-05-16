@@ -13,9 +13,7 @@ const Bot = ( {icon, message, key} ) => {
       return filteredBotResponses || botResponses['default'];
   }
     return (
-      <>
       <Message icon={icon} message={getBotResponse()} time={key} />
-      </>
     )
   }
 
