@@ -43,18 +43,14 @@ input {
 .send {
     border: none;
     outline: none;
-    top: 12px;
-    right: 15px;
-    float: right;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
     background-color: white;
     color: #8A6FA8;
     font-size: 25px;
     padding: 0;
     margin: 0;
-}
-
-.chat-box {
-    padding: 30px 20px;
 }
 
 .chat-bubble {
