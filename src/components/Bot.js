@@ -45,12 +45,11 @@ const Bot = () => {
   }
     return (
       <>
-      <ul>
-        {conversation.map(message => <li className={message.sender} key={message.id}>{message.content + '\nt. ' + message.sender}</li>)}
-      </ul>
-      <form onSubmit={addResponse}>
-      <input type="text" onChange={handleInputChange} value={message} placeholder="Send a message"/>
+        {conversation.map(message => <div className={message.sender + " chat-bubble"} key={message.id}>{message.content + '\nt. ' + message.sender}</div>)}
+      <form id="chatform" onSubmit={addResponse}>
+      <input className="chat" type="text" onChange={handleInputChange} value={message} placeholder="Send a message"/>
       </form>
+      <button className="send" type="submit" form="chatform" value="Submit">Send</button>
       </>
     )
   }
