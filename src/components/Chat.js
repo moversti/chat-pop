@@ -47,13 +47,13 @@ export default function Chat({ click, bot }) {
                 <Message
                   icon={faUser}
                   message={current}
-                  time={"bot " + d.toLocaleTimeString()}
+                  timeName={"bot " + d.toLocaleTimeString()}
                   key={d.toISOString()}
                 />,
                 <Message
                   icon={faGrinBeam}
                   message={bot(current)}
-                  time={"sinä " + d.toLocaleTimeString()}
+                  timeName={"sinä " + d.toLocaleTimeString()}
                   key={d.toISOString() + "bot"}
                 />
               ]);
