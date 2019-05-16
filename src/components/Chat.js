@@ -45,9 +45,9 @@ export default function Chat({ click, bot }) {
                   message={current}
                   key={new Date().toISOString()}
                 />,
-                <Message 
+                <Bot 
                   icon={faGrinBeam}
-                  message={<Bot humanMessage={current}/>}
+                  message={current}
                   key={new Date().toISOString()}
                 />
               ]);
