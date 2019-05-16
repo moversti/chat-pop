@@ -1,9 +1,10 @@
 import React from 'react';
 import {botResponses} from './botResponses.js'
+import Message from './Message.js'
 
-const Bot = ( {humanMessage} ) => {
+const Bot = ( {icon, message, key} ) => {
     const getBotResponse = () => { 
-      const allowedKeys = Object.keys(botResponses).filter(key => humanMessage.includes(key));
+      const allowedKeys = Object.keys(botResponses).filter(key => message.includes(key));
       const filteredBotResponses = allowedKeys
         .reduce((arr, key, idx) => {
           arr[idx] = botResponses[key];
@@ -12,9 +13,7 @@ const Bot = ( {humanMessage} ) => {
       return filteredBotResponses || botResponses['default'];
   }
     return (
-      <>
-      {getBotResponse()}
-      </>
+      <Message icon={icon} message={getBotResponse()} time={key} />
     )
   }
 
