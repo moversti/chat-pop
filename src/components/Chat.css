@@ -9,6 +9,11 @@
     right: 100px;
 }
 
+.scrollable-messages {
+    height: 308px;
+    overflow-y: scroll;
+}
+
 .bar {
     background-color: #8A6FA8;
     height: 40px;
@@ -25,7 +30,6 @@
     background-color: white;
     color: gray;
     padding: 15px;
-    position: absolute;
     bottom: 0; right: 0; left: 0;
 }
 

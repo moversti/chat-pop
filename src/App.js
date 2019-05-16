@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Chat from './components/Chat'
 import ChatMinimized from './components/ChatMinimized'
+import Bot from './Bot'
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
         }} /> :
         <Chat click={()=>{
           setMinimized(true)
-        }} />
+        }} bot={Bot} />
       }
     </React.Fragment>
   );

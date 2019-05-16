@@ -5,7 +5,6 @@ import { faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
 import { faGrinBeam, faUser } from "@fortawesome/free-regular-svg-icons";
 import "./Chat.css";
 import Message from "./Message";
-import Bot from "./Bot";
 
 export default function Chat({ click, bot }) {
   const [messages, setMessages] = useState([]);
@@ -20,11 +19,12 @@ export default function Chat({ click, bot }) {
           </div>
         </div>
 
-        <Message icon={faGrinBeam} message="Miten voin auttaa?" time='bot 16.5' />
-        <Message icon={faUser} message="Haluan banaanin" />
-        <Message icon={faGrinBeam} message="Nam!" />
-
-        {messages}
+        <div className='scrollable-messages'>
+          {/* <Message icon={faGrinBeam} message="Miten voin auttaa?" time='bot 16.5' />
+          <Message icon={faUser} message="Haluan banaanin" />
+          <Message icon={faGrinBeam} message="Nam!" /> */}
+          {messages}
+        </div>
 
         <div className="chat">
           <input
@@ -38,17 +38,20 @@ export default function Chat({ click, bot }) {
           <button
             className="send"
             onClick={() => {
+              let d = new Date()
               setMessages([
                 ...messages,
                 <Message
                   icon={faUser}
                   message={current}
-                  key={new Date().toISOString()}
+                  time={'bot '+d.toLocaleTimeString()}
+                  key={d.toISOString()}
                 />,
                 <Message 
                   icon={faGrinBeam}
-                  message={<Bot humanMessage={current}/>}
-                  key={new Date().toISOString()}
+                  message={bot(current)}
+                  time={'sinä '+d.toLocaleTimeString()}
+                  key={d.toISOString()+'bot'}
                 />
               ]);
               setCurrent("");
