@@ -46,6 +46,7 @@ export default function Chat({ click, bot }) {
               }}
             />
             <button
+              disabled={current.length<1}
               type="submit"
               className="send"
               onClick={(e) => {
