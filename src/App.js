@@ -9,7 +9,7 @@ function App() {
   // Käytetään react hooks
   // https://reactjs.org/docs/hooks-intro.html
   const [minimized, setMinimized] = useState(false)
-
+  const [messages, setMessages] = useState([])
 
 
   return (
@@ -19,7 +19,7 @@ function App() {
         <ChatMinimized click={()=>{
           setMinimized(false)
         }} /> :
-        <Chat click={()=>{
+        <Chat messages={messages} setMessages={setMessages} click={()=>{
           setMinimized(true)
         }} bot={Bot} />
       }

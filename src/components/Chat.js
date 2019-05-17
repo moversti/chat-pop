@@ -14,8 +14,7 @@ function scrollToBottom() {
   element.scrollTop = element.scrollHeight;
 }
 
-export default function Chat({ click, bot }) {
-  const [messages, setMessages] = useState([]);
+export default function Chat({ click, bot, messages, setMessages }) {
   const [current, setCurrent] = useState("");
   useEffect(scrollToBottom);
   return (
