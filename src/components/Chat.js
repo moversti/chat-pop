@@ -18,7 +18,6 @@ export default function Chat({ click, bot }) {
   const [messages, setMessages] = useState([]);
   const [current, setCurrent] = useState("");
   useEffect(scrollToBottom);
-
   return (
     <Draggable handle="#handle" bounds="body">
       <div className="window">
@@ -70,7 +69,7 @@ export default function Chat({ click, bot }) {
                 setCurrent("");
               }}
             >
-              <FontAwesomeIcon icon={faChevronCircleRight} />
+              <FontAwesomeIcon icon={faChevronCircleRight} className={current.length<1 ? 'send-disabled' : ''} />
             </button>
           </form>
         </div>

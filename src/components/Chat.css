@@ -54,3 +54,7 @@ input {
   padding: 0;
   margin: 0;
 }
+
+.send-disabled {
+  color: grey;
+}
