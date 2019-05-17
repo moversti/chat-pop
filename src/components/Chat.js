@@ -64,6 +64,7 @@ export default function Chat({ click, bot }) {
                     message={bot(current)}
                     timeName={"sinä " + d.toLocaleTimeString()}
                     key={d.toISOString() + "bot"}
+                    showFeedbackIcons={true}
                   />
                 ]);
                 setCurrent("");

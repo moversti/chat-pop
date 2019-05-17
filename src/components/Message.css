@@ -1,9 +1,9 @@
 .chat-bubble {
   display: grid;
   grid-template-areas:
-    "grin content"
-    ". content"
-    ". time-name";
+    "grin content content"
+    ". content content"
+    ". time-name feedback";
 
   width: 300px;
   height: auto;
@@ -25,4 +25,16 @@
   grid-area: time-name;
   font-size: 10px;
   margin: 0 10px;
+}
+
+.feedback-icons {
+  grid-area: feedback;
+}
+
+.feedback-positive {
+  color: green;
+}
+
+.feedback-negative {
+  color: red;
 }
