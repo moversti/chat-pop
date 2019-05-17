@@ -1,14 +1,16 @@
 [![Build Status](https://travis-ci.com/moversti/chat-pop.svg?branch=master)](https://travis-ci.com/moversti/chat-pop)
 
+Keskustelu botti ja ikkuna jonka voi laittaa pieneksi ja liikuttaa vetämällä.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `firebase deploy`
+### `npm deploy`
 
-Tällä hoituu deploy firebaseen osoitteeseen [https://chat-pop.web.app/](https://chat-pop.web.app/). Ensin pitää asentaa npm. Sitten `npm install -g firebase-tools`, `firebase login`, `firebase deploy`. Install ja login joutuu tehdä vain ensimäisellä kerralla.
+Tällä hoituu deploy firebaseen osoitteeseen [https://chat-pop.web.app/](https://chat-pop.web.app/). `npm install -g firebase-tools`, `firebase login`, `npm deploy`. Install ja login joutuu tehdä vain ensimäisellä kerralla. Tämä buildaa automaattisesti ennen deployta.
 
 ### `npm start`
 
