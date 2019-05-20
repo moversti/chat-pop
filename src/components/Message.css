@@ -9,6 +9,7 @@
   height: auto;
   grid-column-gap: 10px;
   overflow: visible;
+  padding: 0 0 10px 10px;
 }
 
 .content {
@@ -29,12 +30,20 @@
 
 .feedback-icons {
   grid-area: feedback;
+  margin-left: 50px; 
 }
 
 .feedback-positive {
-  color: green;
+  color: #008000;
+  background-color: white;
+  padding: 5px;
+  border-radius: 50%;
 }
 
 .feedback-negative {
-  color: red;
+  color: #C0392B;
+  background-color: white;
+  padding: 5px;
+  border-radius: 50%;
+  margin-right: 5px;
 }

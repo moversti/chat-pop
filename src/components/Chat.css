@@ -57,6 +57,6 @@ input {
 }
 
 .send-disabled {
-  color: grey;
+  color: #7b7582;
   cursor: default;
 }
