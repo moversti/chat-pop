@@ -1,26 +1,29 @@
 .window {
-  width: 400px;
-  height: 400px;
+  width: 25em;
+  height: 25em;
   background-color: #d9d9d9;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: solid 1px #707070;
-  position: absolute;
   bottom: 0;
-  right: 100px;
+  right: 6.25em;
+  position: sticky;
+  position: -webkit-sticky;
+  grid-area: footer;
+  justify-self: right;
 }
 
 .scrollable-messages {
-  height: 308px;
+  height: 19.25em;
   overflow-y: scroll;
 }
 
 .bar {
   background-color: #8a6fa8;
-  height: 40px;
+  height: 2.5em;
 }
 
 .minimize {
-  padding: 10px 15px;
+  padding: 0.625em 0.938em;
   position: absolute;
   right: 0;
   color: white;
@@ -29,7 +32,7 @@
 .chat {
   background-color: white;
   color: gray;
-  padding: 15px;
+  padding: 0.938em;
   bottom: 0;
   right: 0;
   left: 0;
@@ -38,7 +41,7 @@
 input {
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: 1em;
   width: 90%;
 }
 
@@ -46,14 +49,13 @@ input {
   border: none;
   outline: none;
   position: absolute;
-  right: 20px;
-  bottom: 10px;
+  font-size: 1.563em;
   background-color: white;
   color: #8a6fa8;
-  font-size: 25px;
-  padding: 0;
-  margin: 0;
   cursor: pointer;
+  right: 0.8em;
+  margin: 0;
+  padding: 0;
 }
 
 .send-disabled {

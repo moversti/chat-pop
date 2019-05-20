@@ -2,15 +2,18 @@
     background-color: #8A6FA8;
     color: white;
     border: gray 1px solid;
-    width: 300px;
-    height: 20px;
-    padding: 10px;
-    position: absolute;
+    width: 20em;
+    height: 2.5em;
+    padding: 0.625em;
+    position: sticky;
+    position: -webkit-sticky;
     bottom: 0;
-    right: 100px;
+    right: 6.25em;
+    grid-area: footer;
+    justify-self: right;
 }
 
 .arrow {
     float: right;
-    padding: 0 10px;
+    padding: 0 0.625em;
 }
