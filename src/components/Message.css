@@ -9,7 +9,21 @@
   height: auto;
   grid-column-gap: 10px;
   overflow: visible;
-  padding: 0 0 10px 10px;
+  padding: 10px 0 10px 30px;
+}
+
+.chat-bubble-user {
+  display: grid;
+  grid-template-areas:
+    "content content grin"
+    "content content ."
+    "time-name feedback .";
+    
+    width: 300px;
+    height: auto;
+    grid-column-gap: 10px;
+    overflow: visible;
+    padding: 10px 0 10px 30px;
 }
 
 .content {
@@ -40,10 +54,21 @@
   border-radius: 50%;
 }
 
+.feedback-positive:hover {
+  background-color: #7b7582;
+  color: lightgreen;
+}
+
+
 .feedback-negative {
   color: #C0392B;
   background-color: white;
   padding: 5px;
   border-radius: 50%;
   margin-right: 5px;
+}
+
+.feedback-negative:hover {
+  background-color: #7b7582;
+  color: #F08080;
 }
