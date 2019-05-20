@@ -12,6 +12,7 @@
 .scrollable-messages {
   height: 308px;
   overflow-y: scroll;
+  padding: 0 30px;
 }
 
 .bar {
