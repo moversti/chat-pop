@@ -55,13 +55,13 @@ export default function Chat({ click, bot, messages, setMessages }) {
                   <Message
                     icon={faUser}
                     message={current}
-                    timeName={"bot " + d.toLocaleTimeString()}
+                    timeName={"sinä " + d.toLocaleTimeString()}
                     key={d.toISOString()}
                   />,
                   <Message
                     icon={faGrinBeam}
                     message={bot(current)}
-                    timeName={"sinä " + d.toLocaleTimeString()}
+                    timeName={"bot " + d.toLocaleTimeString()}
                     key={d.toISOString() + "bot"}
                     showFeedbackIcons={true}
                   />
