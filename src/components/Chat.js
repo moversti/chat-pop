@@ -57,6 +57,7 @@ export default function Chat({ click, bot, messages, setMessages }) {
                     message={current}
                     timeName={"sinä " + d.toLocaleTimeString()}
                     key={d.toISOString()}
+                    chatClassName='chat-bubble'
                   />,
                   <Message
                     icon={faGrinBeam}
@@ -64,6 +65,7 @@ export default function Chat({ click, bot, messages, setMessages }) {
                     timeName={"bot " + d.toLocaleTimeString()}
                     key={d.toISOString() + "bot"}
                     showFeedbackIcons={true}
+                    chatClassName='chat-bubble-user'
                   />
                 ]);
                 setCurrent("");
