@@ -8,15 +8,25 @@ import {
 import { faGrinBeam, faUser } from "@fortawesome/free-regular-svg-icons";
 import "./Chat.css";
 import Message from "./Message";
+import db from '../firebase'
 
 function scrollToBottom() {
   let element = document.querySelector(".scrollable-messages");
   element.scrollTop = element.scrollHeight;
 }
 
+function sendFeedback(msg, botMsg, pn, date) {
+  db.ref(pn).push({
+    message:msg,
+    botMessage:botMsg,
+    timedate:date
+  })
+}
+
 export default function Chat({ click, bot, messages, setMessages }) {
   const [current, setCurrent] = useState("");
   useEffect(scrollToBottom);
+  const botResponse = bot(current);
   return (
     <Draggable handle="#handle" bounds="body">
       <div className="window">
@@ -44,11 +54,11 @@ export default function Chat({ click, bot, messages, setMessages }) {
               }}
             />
             <button
-              disabled={current.length<1}
+              disabled={current.length < 1}
               type="submit"
               className="send"
-              onClick={(e) => {
-                e.preventDefault()
+              onClick={e => {
+                e.preventDefault();
                 let d = new Date();
                 setMessages([
                   ...messages,
@@ -57,21 +67,30 @@ export default function Chat({ click, bot, messages, setMessages }) {
                     message={current}
                     timeName={"sinä " + d.toLocaleTimeString()}
                     key={d.toISOString()}
-                    chatClassName='chat-bubble-user'
+                    chatClassName="chat-bubble-user"
                   />,
                   <Message
                     icon={faGrinBeam}
-                    message={bot(current)}
+                    message={botResponse}
                     timeName={"bot " + d.toLocaleTimeString()}
                     key={d.toISOString() + "bot"}
                     showFeedbackIcons={true}
-                    chatClassName='chat-bubble'
+                    chatClassName="chat-bubble"
+                    giveNegative={() => {
+                      sendFeedback(current, botResponse, "negative", d.toISOString());
+                    }}
+                    givePositive={() => {
+                      sendFeedback(current, botResponse, "positive", d.toISOString());
+                    }}
                   />
                 ]);
                 setCurrent("");
               }}
             >
-              <FontAwesomeIcon icon={faChevronCircleRight} className={current.length<1 ? 'send-disabled' : ''} />
+              <FontAwesomeIcon
+                icon={faChevronCircleRight}
+                className={current.length < 1 ? "send-disabled" : ""}
+              />
             </button>
           </form>
         </div>

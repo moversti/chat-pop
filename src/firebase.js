@@ -1,4 +1,5 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/database'
 const firebaseConfig = {
     apiKey: "AIzaSyDTw0Li4ov52btSmxz7ze8UpQskznSMPTg",
     authDomain: "chat-pop.firebaseapp.com",
