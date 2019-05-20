@@ -1,38 +1,49 @@
 .chat-bubble {
   display: grid;
   grid-template-areas:
-    "grin content content"
+    "bot content content"
     ". content content"
     ". time-name feedback";
 
-  width: 300px;
   height: auto;
   grid-column-gap: 10px;
   overflow: visible;
-  padding: 10px 0 10px 30px;
+  padding-right: 2.65rem;
+}
+
+.chat-bubble:last-child {
+  padding-bottom: 10px; 
+}
+
+.fa-grin-beam {
+  grid-area: bot
 }
 
 .chat-bubble-user {
   display: grid;
+  grid-template-columns: auto auto 30px;
   grid-template-areas:
-    "content content grin"
+    "content content user"
     "content content ."
     "time-name feedback .";
     
-    width: 300px;
     height: auto;
     grid-column-gap: 10px;
     overflow: visible;
-    padding: 10px 0 10px 30px;
+    padding-left: 2.65rem;
+    padding-top: 10px;
+    margin-bottom: .125rem
+  }
+
+.fa-user{
+  grid-area: user
 }
 
 .content {
   grid-area: content;
-  text-align: left;
   padding: 10px;
   margin: 10px 0 5px 0;
   background-color: white;
-  border-radius: 10%/20%;
   z-index: 950;
 }
 
