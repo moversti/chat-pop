@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-  background-image: url('background.jpg');
+  background-image: url('bg-pizza.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
