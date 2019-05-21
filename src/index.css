@@ -3,7 +3,7 @@
 }
 
 html {
-  font-size: 3vw;
+  font-size: 3.5vw;
 }
 
 body {
@@ -25,10 +25,18 @@ code {
 }
 
 @media
+only screen and (min-width: 576px)
+{
+  html {
+    font-size: 2.7vw;
+  }
+}
+
+@media
 only screen and (min-width: 768px)
 {
   html {
-    font-size: 2vw;
+    font-size: 2.2vw;
   }
 }
 
@@ -36,12 +44,19 @@ only screen and (min-width: 768px)
 only screen and (min-width: 1024px)
 {
   html {
-    font-size: 1.5vw;
+    font-size: 1.8vw;
   }
 }
 
 @media
 only screen and (min-width: 1280px)
+{
+  html {
+    font-size: 1.3vw;
+  }
+}
+
+@media only screen and (min-width: 1600px)
 {
   html {
     font-size: 1vw;
