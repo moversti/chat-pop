@@ -8,12 +8,10 @@ import {
 import { faGrinBeam, faUser } from "@fortawesome/free-regular-svg-icons";
 import "./Chat.css";
 import Message from "./Message";
+import BotMessage from "./BotMessage";
 import db from '../firebase'
+import {scrollToBottom} from '../util'
 
-function scrollToBottom() {
-  let element = document.querySelector(".scrollable-messages");
-  element.scrollTop = element.scrollHeight;
-}
 
 function sendFeedback(msg, botMsg, pn, date) {
   db.ref(pn).push({
@@ -26,7 +24,7 @@ function sendFeedback(msg, botMsg, pn, date) {
 export default function Chat({ click, bot, messages, setMessages }) {
   const [current, setCurrent] = useState("");
   useEffect(scrollToBottom);
-  const botResponse = bot(current);
+  
   return (
     <Draggable handle="#handle" bounds="body">
       <div className="window">
@@ -58,6 +56,8 @@ export default function Chat({ click, bot, messages, setMessages }) {
               type="submit"
               className="send"
               onClick={e => {
+                let botResponse = bot(current);
+                
                 e.preventDefault();
                 let d = new Date();
                 setMessages([
@@ -69,7 +69,7 @@ export default function Chat({ click, bot, messages, setMessages }) {
                     key={d.toISOString()}
                     chatClassName="chat-bubble-user"
                   />,
-                  <Message
+                  <BotMessage
                     icon={faGrinBeam}
                     message={botResponse}
                     timeName={"bot " + d.toLocaleTimeString()}
