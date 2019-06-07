@@ -6,7 +6,7 @@ export default async function elizabot(humanMessage) {
     return text
   }
 
-  let url = "http://moversti.eu.pythonanywhere.com/eliza?msg=" + humanMessage;
+  let url = "https://moversti.eu.pythonanywhere.com/eliza?msg=" + humanMessage;
   let result = await fetchaa(url);
   console.log('result',result)
   return result;
