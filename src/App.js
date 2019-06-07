@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Chat from './components/Chat'
 import ChatMinimized from './components/ChatMinimized'
-import Bot from './elizabot'
+import Bot from './chatterbot'
 
 function App() {
 
